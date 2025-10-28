@@ -1,0 +1,806 @@
+CASINO PLAYER SEGMENTATION PROJECT
+5-6 DAY ROADMAP
+
+Project Overview
+================
+You will analyze 4,000+ real casino players using Harvard's Transparency Project data to segment players, calculate lifetime value, and create recommendations for optimal marketing spend and retention strategies.
+
+Timeline: 5-6 days (6 hours per day = 30-36 total hours)
+Tools: Python, Power BI, GitHub
+Final Output: Professional portfolio project for Caesars Entertainment application
+
+
+PROJECT OBJECTIVES
+==================
+1. Segment casino players into meaningful groups based on behavior
+2. Calculate Customer Lifetime Value (CLV) for each segment
+3. Create actionable recommendations for player retention and marketing spend
+4. Build professional dashboard visualizing insights
+5. Demonstrate casino analytics expertise for job applications
+
+
+DAY 1: SETUP & DATA UNDERSTANDING (6 hours)
+============================================
+
+Goal: Get the data and understand what we have
+
+What You'll Do:
+--------------
+1. Download the Harvard casino dataset (3 files)
+   - AnalyticDataSet_VirtualCasino
+   - RawDataSet1_DemographicsCasino
+   - RawDataSet2_DailyAggregCasino
+   - Codebook for variable definitions
+
+2. Set up project folder structure:
+   Casino_Player_Segmentation/
+   ├── data/
+   │   ├── raw/
+   │   └── processed/
+   ├── code/
+   ├── dashboard/
+   └── reports/
+
+3. Load the data into Python
+   - Import pandas, numpy, matplotlib, seaborn
+   - Read CSV files
+   - Check data structure
+
+4. Initial data exploration
+   - Look at column names and data types
+   - Check dimensions (rows × columns)
+   - View first few rows
+   - Generate summary statistics
+
+5. Data quality checks
+   - Check for missing values
+   - Identify duplicates
+   - Look for outliers
+   - Check data ranges
+
+6. Basic data cleaning
+   - Remove duplicate rows
+   - Handle missing values (median imputation)
+   - Remove empty columns
+   - Standardize formats
+
+7. Save cleaned data for tomorrow
+   - Export to CSV in processed folder
+   - Document what you found
+
+What You'll Learn:
+-----------------
+- What data is available in the dataset
+- How many players total
+- What time period the data covers
+- What information exists about each player
+- Quality of the data
+
+Outputs:
+--------
+✓ Clean dataset ready to analyze (saved in processed folder)
+✓ Understanding of dataset structure and contents
+✓ Initial exploration report/summary
+✓ Foundation for Day 2 analysis
+
+Key Questions to Answer:
+------------------------
+- How many unique players?
+- What time period does the data cover?
+- What variables are available?
+- What is the data quality?
+- Are there any obvious patterns?
+
+
+DAY 2: RFM ANALYSIS & SEGMENTATION (6 hours)
+=============================================
+
+Goal: Group players into meaningful categories
+
+What You'll Do:
+--------------
+1. Calculate Recency (R)
+   - Days since last bet for each player
+   - More recent = higher score
+   - Scale from 1-5
+
+2. Calculate Frequency (F)
+   - Number of betting days
+   - More frequent = higher score
+   - Scale from 1-5
+
+3. Calculate Monetary (M)
+   - Total amount wagered
+   - Higher spending = higher score
+   - Scale from 1-5
+
+4. Combine RFM scores
+   - Create composite RFM score
+   - Use for clustering
+
+5. Run K-means clustering algorithm
+   - Test 3-6 clusters
+   - Use elbow method to find optimal number
+   - Assign each player to a segment
+
+6. Profile each segment
+   - Calculate average RFM scores
+   - Calculate average betting metrics
+   - Determine segment sizes
+   - Identify characteristics
+
+7. Name the segments meaningfully
+   Examples:
+   - "VIP High Rollers" (high R, high F, high M)
+   - "Regular Players" (medium across all)
+   - "Casual Gamblers" (low F, low M)
+   - "At-Risk Players" (low R, was high F/M)
+   - "New Players" (high R, low F)
+
+What You'll Learn:
+-----------------
+- Which types of players exist in the data
+- What makes each group different
+- Size and importance of each segment
+- Behavioral patterns by segment
+
+Outputs:
+--------
+✓ Each player labeled with their segment
+✓ Segment profiles with statistics
+✓ Segment distribution chart
+✓ RFM score distributions
+✓ Dataset with segment assignments saved
+
+Key Insights to Document:
+-------------------------
+- How many segments did you find?
+- What % of players in each segment?
+- Which segment is largest?
+- Characteristics of each segment?
+- Any surprising patterns?
+
+
+DAY 3: CUSTOMER LIFETIME VALUE (6 hours)
+=========================================
+
+Goal: Calculate how much each player is worth
+
+What You'll Do:
+--------------
+1. Calculate historical value
+   - Total amount wagered per player
+   - Average bet size
+   - Total sessions/visits
+   - Win/loss patterns
+
+2. Calculate CLV by segment
+   - Average historical value per segment
+   - Identify most profitable segments
+   - Calculate contribution to total value
+
+3. Build predictive CLV model
+   - Use simple regression model
+   - Predict future value based on:
+     * RFM scores
+     * Historical patterns
+     * Segment membership
+   - Generate predictions for next 6-12 months
+
+4. Analyze segment profitability
+   - Rank segments by average CLV
+   - Calculate total value by segment
+   - Identify high-value players
+
+5. Calculate key metrics
+   - Average CLV per player
+   - CLV distribution
+   - Segment value ranges
+   - Top 10% vs bottom 10% comparison
+
+6. Reinvestment analysis
+   - Estimate reasonable comp/reward budgets
+   - Calculate ROI by segment
+   - Identify optimal spending levels
+
+What You'll Learn:
+-----------------
+- Which player segments are most valuable
+- Predicted future value of each segment
+- Who to prioritize for marketing/retention
+- Optimal reinvestment levels
+
+Outputs:
+--------
+✓ CLV calculated for each player
+✓ Average CLV by segment
+✓ Predictive model for future value
+✓ Segment ranking by profitability
+✓ Reinvestment recommendations
+
+Key Questions to Answer:
+------------------------
+- Which segment has highest average CLV?
+- What is the CLV range within each segment?
+- What % of total value comes from each segment?
+- Which segments warrant highest marketing spend?
+- What is predicted future value?
+
+
+DAY 4: DASHBOARD CREATION (6 hours)
+====================================
+
+Goal: Visualize everything in Power BI
+
+What You'll Do:
+--------------
+1. Prepare data for Power BI
+   - Create summary tables
+   - Export to Excel/CSV format
+   - Include all key metrics
+   - Ensure proper formatting
+
+2. Load data into Power BI Desktop
+   - Import datasets
+   - Check relationships
+   - Create calculated columns if needed
+
+3. Create 5 key visualizations:
+
+   A. Segment Overview (Pie Chart)
+      - % of players in each segment
+      - Color-coded by segment
+      - Show counts and percentages
+
+   B. CLV by Segment (Bar Chart)
+      - Average CLV per segment
+      - Sorted from highest to lowest
+      - Show values on bars
+
+   C. Player Distribution (Histogram)
+      - Distribution of betting amounts
+      - Or distribution of CLV
+      - Show pattern across segments
+
+   D. Key Metrics Cards
+      - Total players
+      - Total CLV
+      - Average CLV per player
+      - Number of segments
+
+   E. Segment Profile Table
+      - Segment name
+      - Player count
+      - Avg Recency/Frequency/Monetary
+      - Avg CLV
+      - % of total value
+
+4. Add interactivity
+   - Slicers for segments
+   - Tooltips with details
+   - Cross-filtering between visuals
+
+5. Format and style
+   - Professional color scheme
+   - Clear titles and labels
+   - Consistent fonts
+   - Add your name/date
+
+6. Test dashboard
+   - Check all filters work
+   - Verify calculations
+   - Test interactivity
+
+What You'll Learn:
+-----------------
+- How to present data visually
+- Power BI fundamentals
+- Dashboard design principles
+- Data storytelling
+
+Outputs:
+--------
+✓ Professional interactive Power BI dashboard
+✓ .pbix file saved
+✓ PDF export of dashboard
+✓ Screenshots for portfolio/resume
+
+Dashboard Must Show:
+-------------------
+- Clear segment differentiation
+- CLV insights
+- Player distribution
+- Key business metrics
+- Professional appearance
+
+
+DAY 5: DOCUMENTATION (6 hours)
+===============================
+
+Goal: Write it up so others understand
+
+What You'll Do:
+--------------
+1. Write 1-Page Executive Summary (3 hours)
+
+   Structure:
+   ----------
+   A. Problem Statement (2 paragraphs)
+      - Challenge casinos face with player segmentation
+      - Need for data-driven retention strategies
+   
+   B. Approach (2 paragraphs)
+      - Data source (Harvard, 4,000+ players)
+      - Methodology (RFM analysis, clustering, CLV)
+   
+   C. Key Findings (3-4 bullet points)
+      - Number of segments identified
+      - Most valuable segment characteristics
+      - CLV ranges by segment
+      - Specific surprising insights
+   
+   D. Recommendations (3-4 bullet points)
+      - Which segments to prioritize
+      - Suggested reinvestment levels
+      - Retention strategies
+      - Marketing focus areas
+   
+   E. Business Impact (1 paragraph)
+      - Potential revenue optimization
+      - Improved marketing ROI
+      - Better player retention
+
+2. Create GitHub Repository (2 hours)
+
+   A. Repository structure:
+      - README.md
+      - Code files (notebooks)
+      - Data folder (note: don't upload large raw data)
+      - Images/screenshots
+      - Documentation
+
+   B. Write comprehensive README.md:
+      - Project title and description
+      - Business problem
+      - Data source
+      - Methodology
+      - Key findings
+      - Technologies used
+      - How to run the code
+      - Results/visualizations
+      - Contact information
+
+   C. Clean up code files:
+      - Add comments explaining each section
+      - Remove unnecessary code
+      - Ensure reproducibility
+      - Add markdown explanations
+
+3. Organize All Files (1 hour)
+
+   A. Create final project folder:
+      ├── Code/
+      │   ├── 01_data_loading.ipynb
+      │   ├── 02_rfm_segmentation.ipynb
+      │   └── 03_clv_analysis.ipynb
+      ├── Dashboard/
+      │   ├── casino_dashboard.pbix
+      │   └── dashboard_screenshots/
+      ├── Reports/
+      │   ├── Executive_Summary.pdf
+      │   └── Technical_Documentation.pdf
+      └── README.md
+
+   B. Quality checks:
+      - All files named clearly
+      - No temporary files
+      - Everything documented
+      - Ready to share
+
+What You'll Learn:
+-----------------
+- How to communicate technical work to non-technical audiences
+- Professional documentation standards
+- GitHub portfolio best practices
+- Writing for business impact
+
+Outputs:
+--------
+✓ 1-page executive summary (PDF)
+✓ GitHub repository (public)
+✓ Clean, commented code
+✓ Comprehensive README
+✓ Organized project files
+✓ Portfolio-ready materials
+
+
+DAY 6 (OPTIONAL): POLISH & INTERVIEW PREP (3-4 hours)
+======================================================
+
+Goal: Get ready to talk about your work
+
+What You'll Do:
+--------------
+1. Create 5-Slide Presentation (1.5 hours)
+
+   Slide 1: Title & Context
+   - Project name
+   - Your name
+   - Brief problem statement
+   - Data source
+
+   Slide 2: Approach & Methodology
+   - RFM analysis explanation
+   - Clustering approach
+   - CLV calculation method
+   - Simple visual of process
+
+   Slide 3: Key Findings
+   - Segment profiles
+   - CLV by segment
+   - Main insights (3-4 bullets)
+   - Screenshot of dashboard
+
+   Slide 4: Business Recommendations
+   - Prioritization strategy
+   - Reinvestment levels
+   - Retention tactics
+   - Expected impact
+
+   Slide 5: Next Steps & Applications
+   - How this applies to Caesars
+   - Potential extensions
+   - Your contact info
+
+2. Practice Explaining Project (1 hour)
+
+   Prepare 3 versions:
+   -------------------
+   A. 30-second elevator pitch
+      "I analyzed 4,000 casino players from Harvard data, segmented them into 5 groups based on betting behavior, and calculated lifetime value to optimize marketing spend. Found that [key insight]."
+
+   B. 3-minute overview
+      - Problem context
+      - What you did
+      - Key findings
+      - Business impact
+      - Why it matters for Caesars
+
+   C. 10-minute deep dive
+      - Detailed methodology
+      - Show dashboard
+      - Discuss insights
+      - Technical details
+      - Answer questions
+
+3. Prepare for Common Questions (1 hour)
+
+   Questions to prepare for:
+   -------------------------
+   Q: "Walk me through this project"
+   Q: "What was your most interesting finding?"
+   Q: "What challenges did you face?"
+   Q: "What would you do differently?"
+   Q: "How would this apply to Caesars specifically?"
+   Q: "Why did you choose this approach?"
+   Q: "What other analyses could you do?"
+   Q: "How confident are you in your predictions?"
+   Q: "What tools did you use and why?"
+   Q: "What was your biggest learning?"
+
+4. Update Resume & LinkedIn (30 minutes)
+
+   Resume bullet point:
+   -------------------
+   "Developed casino player segmentation model analyzing 4,000+ players from Harvard Transparency Project using RFM analysis, K-means clustering, and CLV prediction; created Power BI dashboard with actionable retention strategies, identifying optimal marketing spend allocation across 5 distinct player segments"
+
+   LinkedIn project section:
+   -------------------------
+   Add project with:
+   - Title
+   - Description
+   - Skills used
+   - Link to GitHub
+   - Dashboard screenshot
+
+What You'll Learn:
+-----------------
+- How to present technical work confidently
+- Interview preparation strategies
+- Professional communication skills
+- Portfolio presentation
+
+Outputs:
+--------
+✓ 5-slide presentation
+✓ Practiced elevator pitch
+✓ Prepared interview answers
+✓ Updated resume
+✓ Updated LinkedIn
+✓ Complete confidence in your work
+
+
+COMPLETE PROJECT DELIVERABLES
+==============================
+
+After 5-6 days, you will have:
+
+1. Technical Deliverables:
+   ✓ Jupyter notebooks with complete analysis
+   ✓ Interactive Power BI dashboard
+   ✓ Clean, documented Python code
+   ✓ Processed datasets
+
+2. Documentation:
+   ✓ 1-page executive summary (PDF)
+   ✓ GitHub README with full project description
+   ✓ Technical documentation
+   ✓ Code comments and explanations
+
+3. Presentation Materials:
+   ✓ 5-slide presentation
+   ✓ Dashboard screenshots
+   ✓ Key visualizations
+   ✓ Prepared talking points
+
+4. Portfolio:
+   ✓ Public GitHub repository
+   ✓ LinkedIn project showcase
+   ✓ Resume-ready bullet points
+   ✓ Professional portfolio piece
+
+
+WHAT YOU'LL BE ABLE TO SAY IN INTERVIEWS
+=========================================
+
+"I wanted to demonstrate my understanding of casino analytics, so I built a player segmentation model using real data from Harvard's Transparency Project.
+
+I analyzed over 4,000 casino players across 2 years, applying RFM analysis to segment them into 5 distinct groups based on their betting behavior. I then calculated Customer Lifetime Value for each segment to identify the most profitable player types.
+
+My key finding was [you'll discover this from your analysis - for example: 'that 15% of players (VIP segment) generated 60% of total value, but were receiving disproportionately low marketing attention'].
+
+I built a Power BI dashboard that visualizes these segments and provides recommendations for optimal reinvestment levels. For example, I found that spending $X on high-value players has a Y% ROI compared to only Z% for casual players.
+
+This approach is directly applicable to Caesars' omnichannel strategy, especially considering how online and offline behavior could be combined for even more accurate segmentation. I'm excited to apply these analytical skills to help optimize player retention and marketing efficiency.
+
+Here's my dashboard and all the code is on my GitHub if you'd like to see the technical details."
+
+
+SUCCESS METRICS - YOU'LL KNOW YOU'RE READY WHEN:
+=================================================
+
+✓ You can explain the project in 30 seconds, 3 minutes, or 10 minutes
+✓ You understand every line of code you wrote
+✓ You can answer "why did you do it that way?"
+✓ Your dashboard looks professional and tells a clear story
+✓ Your GitHub repository is well-documented
+✓ You can discuss 2-3 key insights confidently
+✓ You can connect your findings to Caesars' business
+✓ You feel proud showing it to recruiters
+✓ Your resume bullet point clearly articulates impact
+✓ You're excited to talk about what you learned
+
+
+TECHNICAL REQUIREMENTS
+=======================
+
+Software Needed (All Free):
+---------------------------
+1. Python 3.8+ with libraries:
+   - pandas
+   - numpy
+   - matplotlib
+   - seaborn
+   - scikit-learn
+   - scipy
+   - jupyter
+
+2. Power BI Desktop (free download from Microsoft)
+
+3. GitHub account (free)
+
+4. Text editor or IDE (VS Code, Jupyter, etc.)
+
+Data Source:
+-----------
+- Harvard Transparency Project
+- URL: http://www.thetransparencyproject.org/download_index.php
+- Dataset: Virtual Casino Gambling
+- Size: ~4,000 players, 2 years of data
+- Format: CSV files
+- Cost: Free for research/educational use
+
+
+TIPS FOR SUCCESS
+=================
+
+Time Management:
+---------------
+- Block dedicated time each day
+- Work when you're most focused
+- Take breaks every 2 hours
+- Don't rush - quality matters
+
+Learning Approach:
+-----------------
+- Understand code before running it
+- Document as you go
+- Ask questions when stuck
+- Look up concepts you don't understand
+
+Quality Standards:
+-----------------
+- Code should be clean and commented
+- Visuals should be professional
+- Writing should be clear and concise
+- Everything should be reproducible
+
+Common Pitfalls to Avoid:
+------------------------
+- Don't skip data cleaning (garbage in = garbage out)
+- Don't overcomplicate (simple and clear wins)
+- Don't ignore business context (it's not just math)
+- Don't forget to save your work regularly
+- Don't copy code you don't understand
+
+
+NEXT STEPS AFTER PROJECT COMPLETION
+====================================
+
+Immediate (Week 1):
+------------------
+1. Apply to Caesars Analyst I Rotational Program
+2. Apply to 5-10 other casino/hospitality analytics roles
+3. Share project on LinkedIn
+4. Update resume with project bullet point
+5. Email recruiters with project link
+
+Short-term (Weeks 2-4):
+----------------------
+1. Network with Caesars employees on LinkedIn
+2. Prepare for interviews using project as centerpiece
+3. Consider building second related project if time allows
+4. Practice technical interview questions
+5. Research Caesars' business and recent initiatives
+
+Long-term:
+---------
+1. Keep project updated and maintained on GitHub
+2. Write blog post about key learnings
+3. Add more features based on feedback
+4. Use as portfolio piece for future opportunities
+5. Help others learn from your approach
+
+
+FINAL MOTIVATION
+================
+
+This project will:
+✓ Demonstrate casino analytics expertise
+✓ Show initiative and self-directed learning
+✓ Prove technical skills in Python and Power BI
+✓ Highlight business acumen and communication skills
+✓ Differentiate you from 95% of applicants
+✓ Give you confidence in interviews
+✓ Provide concrete talking points
+✓ Create a portfolio piece for your career
+
+Your profile after this project:
+- Hotel Management degree ✓
+- MS Analytics (4.0 GPA) ✓
+- 4 years Disney experience ✓
+- Credit risk project ✓
+- Casino segmentation project ✓
+- Power BI dashboard ✓
+- GitHub portfolio ✓
+- Teaching SQL ✓
+- CFA Level I candidate ✓
+
+= TOP 1-3% OF APPLICANTS
+
+You've got this! 🚀
+
+
+CONTACT & SUPPORT
+=================
+
+As you work through this project:
+- Ask questions when stuck
+- Share your progress
+- Request code review
+- Seek clarification on concepts
+- Don't hesitate to ask for help
+
+Remember: The goal is learning and growth, not perfection.
+Every professional data analyst has googled "how to fix this error" countless times.
+
+Good luck with your project!
+
+
+APPENDIX: DAILY CHECKLIST
+==========================
+
+Day 1 Checklist:
+□ Downloaded all 3 Harvard dataset files
+□ Set up project folder structure
+□ Installed Python libraries
+□ Loaded data successfully
+□ Completed initial exploration
+□ Cleaned data (removed duplicates, handled missing values)
+□ Saved processed data
+□ Documented findings
+
+Day 2 Checklist:
+□ Calculated Recency scores
+□ Calculated Frequency scores
+□ Calculated Monetary scores
+□ Combined RFM scores
+□ Ran K-means clustering
+□ Determined optimal number of segments
+□ Profiled each segment
+□ Named segments meaningfully
+□ Saved segmentation results
+
+Day 3 Checklist:
+□ Calculated historical CLV per player
+□ Calculated average CLV by segment
+□ Built predictive CLV model
+□ Generated future value predictions
+□ Ranked segments by profitability
+□ Analyzed reinvestment opportunities
+□ Documented key insights
+□ Saved CLV dataset
+
+Day 4 Checklist:
+□ Prepared data for Power BI
+□ Loaded data into Power BI
+□ Created segment overview visualization
+□ Created CLV by segment chart
+□ Created distribution histogram
+□ Created key metric cards
+□ Created segment profile table
+□ Added filters and interactivity
+□ Formatted dashboard professionally
+□ Saved .pbix file
+□ Exported dashboard PDF
+□ Took screenshots
+
+Day 5 Checklist:
+□ Wrote problem statement
+□ Described methodology
+□ Documented key findings
+□ Created recommendations
+□ Assessed business impact
+□ Created GitHub repository
+□ Uploaded code files
+□ Wrote comprehensive README
+□ Added code comments
+□ Organized all project files
+□ Created final deliverables folder
+□ Quality check completed
+
+Day 6 Checklist (Optional):
+□ Created 5-slide presentation
+□ Prepared 30-second pitch
+□ Prepared 3-minute overview
+□ Prepared 10-minute deep dive
+□ Practiced explaining project
+□ Prepared answers to common questions
+□ Updated resume
+□ Updated LinkedIn
+□ Reviewed all materials
+□ Ready to apply to jobs!
+
+
+END OF ROADMAP
+==============
+
+Project Start Date: _____________
+Expected Completion Date: _____________
+Actual Completion Date: _____________
+
+Notes:
+_____________________________________________
+_____________________________________________
+_____________________________________________
+_____________________________________________
