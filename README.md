@@ -210,10 +210,15 @@ Casino-Player-Segmentation/
 ```
 
 ---
+## 📊 Power BI dashboard
 
-**Project Status:** ✅ Complete & Ready for Implementation  
-**Author:** Visha  
-**Last Updated:** January 2025
+
+The dashboard includes:
+- KPI cards showing total players, revenue, and average LTV
+- Player distribution by segment
+- Revenue analysis by segment
+- RFM scores with color-coded performance indicators
+- Visual representation of the VIP paradox
 
 ---
 
