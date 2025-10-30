@@ -212,6 +212,7 @@ Casino-Player-Segmentation/
 ---
 ## 📊 Power BI dashboard
 
+![Casino Player Segmentation Dashboard](./dashboard/Casino_page-0001.jpg)
 
 The dashboard includes:
 - KPI cards showing total players, revenue, and average LTV
